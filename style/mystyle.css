@@ -1,12 +1,65 @@
+
+/*
+Fonts
+*/
+@font-face {
+    font-family: "Lato";
+    src: url('fonts/Lato/Lato-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face{
+    font-family: "Lato";
+    src: url('fonts/Lato/Lato-Thin.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face{
+    font-family: "Lato";
+    src: url('fonts/Lato/Lato-Light.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 200;
+}
+
+@font-face{
+    font-family: "Lato";
+    src: url('fonts/Lato/Lato-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face{
+    font-family: "Lato";
+    src: url('fonts/Lato/Lato-Italic.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+
+@font-face{
+    font-family: "Lato";
+    src: url('fonts/Lato/Lato-ThinItalic.ttf') format('truetype');
+    font-style: italic;
+    font-weight: 100;
+}
+
+/*
+Template stuff
+*/
+
 body{
-    background-color: #ffffff;
+    background-color: #171719;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    font-family: "Trebuchet MS", "sans-serif";
+    font-family: "Lato", "sans-serif";
+    font-weight: 200;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
+
 .testScroll{
     height: 5000px;
 }
@@ -20,16 +73,17 @@ p{
 }
 
 .palette{
-    background-color: #223148;
-    color: #f3eae0;
+    background-color: #171719;
+    color: #f1f1f1;
+}
+.row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
 }
 
-.navbar{
-    background-color: #223148;
-    border-radius: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    transition: all 0.3s ease-in-out;
+.row.no-gutters > [class^="col-"] {
+    padding-right: 0;
+    padding-left: 0;
 }
 
 .sticky-nav {
@@ -44,8 +98,20 @@ p{
     transition: opacity 0.3s ease-in-out;
 }
 
+/*
+Navbar
+*/
+
+.navbar{
+    background-color: #171719;
+    border-radius: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    transition: all 0.3s ease-in-out;
+}
+
 .navbar .custom-nav{
-    background-color: #223148;
+    background-color: #171719;
     z-index: 9999;
     border: 0;
     font-size: 1.75vh !important;
@@ -60,34 +126,62 @@ p{
 
 
 .navbar-nav li a{
-    color: #f3eae0;
+    color: #f1f1f1;
 }
 
 .navbar-brand{
-    color: #f3eae0;
+    color: #f1f1f1;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
 
 .navbar-header .navbar-brand:hover{
-    color: #f3eae0;
+    color: #f1f1f1;
 }
 
 .navbar-header .navbar-brand:hover{
-    color: #b9d3fa;
+    color: #ffffff;
 }
 
 .navbar-nav li a:hover,
 .navbar-nav li.active a,
 .navbar-nav li a:focus{
-    color: #b9d3fa !important;
-    background-color: #223148 !important;
+    color: #ffffff !important;
+    background-color: #171719 !important;
 }
+
+.navbar-nav li a {
+    position: relative;
+    color: #f1f1f1 !important;
+    text-decoration: none;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.navbar-nav li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #f1f1f1;
+    transition: width 0.4s ease-in-out, left 0.4s ease-in-out;
+}
+
+.navbar-nav li a:hover::after {
+    width: 60%;
+    left: 20%;
+}
+
+/*
+Drop down in nav
+*/
 
 .portDrop .dropdown-menu{
     border: none;
-    color: #b9d3fa !important;
-    background-color: #223148 !important;
+    color: #ffffff !important;
+    background-color: #171719 !important;
     min-width: fit-content;
     text-align: center;
     left: 50%;
@@ -95,29 +189,39 @@ p{
 }
 
 .portDrop .dropdown-menu a:hover{
-    background-color: #223148 !important;
+    background-color: #171719 !important;
 }
 
 .portDrop .dropdown-toggle {
-    background-color: #223148 !important;
-    color: #f3eae0 !important;
+    background-color: #171719 !important;
+    color: #f1f1f1 !important;
     border: none !important;
 }
 
 .portDrop .dropdown-toggle:hover,
 .portDrop .dropdown-toggle:focus,
 .portDrop .dropdown-toggle:active{
-    background-color: #223148 !important;
-    color: #b9d3fa !important;
+    background-color: #171719 !important;
+    color: #ffffff !important;
 }
+
+/*
+Jumbotron
+*/
 
 .homeHeader {
     margin-top: 0;
     text-align: center;
     align-items: center;
-    height: 20vh;
+    height: 95vh;
     width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
 
+.homeHeader h1{
+    font-size: 5vh;
 }
 
 .jumbotron {
@@ -125,27 +229,49 @@ p{
     margin-bottom: 0;
 }
 
+/*
+Carousel
+*/
+
+.carousel {
+    width: 100%;
+    height: 80vh;
+    background-color: #171719;
+}
+
 .carousel-inner {
     width: 100%;
-    height: 65vh;
+    height: 100%;
+    overflow: hidden;
 }
 
 .carousel-inner .item {
     width: 100%;
     height: 100%;
-    text-align: center;
+}
+
+.carousel-inner .item .row {
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-inner .item .col-sm-6 {
+    width: 50%;
+    padding: 0;
+    overflow: hidden;
 }
 
 .carousel-inner .item img {
-    max-width: 100%;
-    max-height: 100%;
-    margin: auto;
-    display: block;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .carousel-control {
-    background: transparent !important;
+    background: transparent;
 }
 
 .glyphicon-chevron-right{
@@ -157,20 +283,26 @@ p{
 }
 
 .carousel-indicators{
-    color: #ffa1bd;
+    color: #f1f1f1;
 }
 
 .carousel-indicators li {
-    background-color: #ffa1bd;
+    background-color: #f1f1f1;
 }
 
 .carousel-indicators .active {
-    background-color: #bbaad6;
+    background-color: #f1f1f1;
 }
 
-.carousel{
-    margin-top: 0;
-    border-top: .25vh solid #ffa1bd;
-    border-bottom: .25vh solid #ffa1bd;
-    background-color: #bbaad6;
+/*
+Containers
+*/
+
+.wcMsg{
+    align-content: center;
+    text-align: center;
+    font-size: 5vh;
+    height: 20vh;
+    width: 100vw;
+    color: #f1f1f1;
 }

@@ -5,6 +5,7 @@
     <title>Home</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="fonts/Amarante-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -14,17 +15,18 @@
 <body>
 
 <div class="homeHeader jumbotron palette">
-    <h1>Homboi Photography</h1>
+    <h1 style="text-transform: uppercase; font-weight: 200">Homboi Photography</h1>
+    <h3 style="text-transform: uppercase; font-weight: 100; color: white">Capture it all</h3>
 </div>
 
 <nav class="navbar custom-nav">
     <div class="container-fluid">
 
         <div class="navbar-header">
-            <a class="navbar-brand" href="home.html">Homboi Photography</a>
+            <a class="navbar-brand" href="home.html">HOMBOI PHOTOGRAPHY</a>
         </div>
 
-        <div class="nav navbar-nav navbar-right">
+        <div  class="nav navbar-nav navbar-right" style="text-transform: uppercase">
             <ul class="nav navbar-nav">
                 <li><a href="home.html">Home</a></li>
 
@@ -51,42 +53,33 @@
 </nav>
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
 
     <div class="carousel-inner">
         <div class="item active">
             <a href="crochets.html">
-                <div class="row">
-                    <div class="col-xs-4"><img src="../images/crochet.png" alt=""></div>
-                    <div class="col-xs-4"><img src="../images/crochet2.png" alt=""></div>
-                    <div class="col-xs-4"><img src="../images/crochet3.png" alt=""></div>
+                <div class="row no-gutters">
+                    <div class="col-sm-6"><img src="../images/sample2.jpg" alt="image"></div>
+                    <div class="col-sm-6"><img src="../images/sample3.jpg" alt="image"></div>
                 </div>
             </a>
         </div>
 
         <div class="item">
             <a href="plushies.html">
-                <div class="row">
-                    <div class="col-xs-4"><img src="../images/plush.png" alt=""></div>
-                    <div class="col-xs-4"><img src="../images/plush2.png" alt=""></div>
-                    <div class="col-xs-4" style="padding-top: 4vh"><img src="../images/plush3.png" alt=""></div>
+                <div class="row no-gutters">
+                    <div class="col-sm-6"><img src="../images/sample.jpg" alt="image"></div>
+                    <div class="col-sm-6"><img src="../images/sample4.jpg" alt="image"></div>
                 </div>
             </a>
         </div>
 
         <div class="item">
             <a href="hoodies.html">
-                <div class="row">
-                    <div class="col-xs-4"><img src="../images/hoodie.png" alt=""></div>
-                    <div class="col-xs-4"><img src="../images/hoodie2.png" alt=""></div>
-                    <div class="col-xs-4"><img src="../images/hoodie3.png" alt=""></div>
+                <div class="row no-gutters">
+                    <div class="col-sm-6"><img src="../images/sample5.jpg" alt="image"></div>
+                    <div class="col-sm-6"><img src="../images/sample6.jpg" alt="image"></div>
                 </div>
             </a>
-
         </div>
     </div>
 
@@ -101,10 +94,11 @@
     </a>
 </div>
 
-<div>
-    <p class="testScroll">
-
-    </p>
+<div class="container-fluid wcMsg">
+    <h1 style="text-transform: uppercase; font-weight: 200">
+        Hi, Welcome to Homboi Photography
+    </h1>
 </div>
+
 </body>
 </html>
