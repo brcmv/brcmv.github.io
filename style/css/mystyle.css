@@ -4,42 +4,42 @@ Fonts
 */
 @font-face {
     font-family: "Lato";
-    src: url('fonts/Lato/Lato-Regular.ttf') format('truetype');
+    src: url('../fonts/Lato/Lato-Regular.ttf') format('truetype');
     font-style: normal;
     font-weight: normal;
 }
 
 @font-face{
     font-family: "Lato";
-    src: url('fonts/Lato/Lato-Thin.ttf') format('truetype');
+    src: url('../fonts/Lato/Lato-Thin.ttf') format('truetype');
     font-style: normal;
     font-weight: 100;
 }
 
 @font-face{
     font-family: "Lato";
-    src: url('fonts/Lato/Lato-Light.ttf') format('truetype');
+    src: url('../fonts/Lato/Lato-Light.ttf') format('truetype');
     font-style: normal;
     font-weight: 200;
 }
 
 @font-face{
     font-family: "Lato";
-    src: url('fonts/Lato/Lato-Bold.ttf') format('truetype');
+    src: url('../fonts/Lato/Lato-Bold.ttf') format('truetype');
     font-style: normal;
     font-weight: bold;
 }
 
 @font-face{
     font-family: "Lato";
-    src: url('fonts/Lato/Lato-Italic.ttf') format('truetype');
+    src: url('../fonts/Lato/Lato-Italic.ttf') format('truetype');
     font-style: italic;
     font-weight: normal;
 }
 
 @font-face{
     font-family: "Lato";
-    src: url('fonts/Lato/Lato-ThinItalic.ttf') format('truetype');
+    src: url('../fonts/Lato/Lato-ThinItalic.ttf') format('truetype');
     font-style: italic;
     font-weight: 100;
 }
@@ -306,3 +306,54 @@ Containers
     width: 100vw;
     color: #f1f1f1;
 }
+
+/*
+Image divs
+ */
+.miniGallery .img-thumbnail{
+    background-color: #f1f1f1;
+    border: 0;
+}
+
+.miniGallery{
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.miniGallery .mgRow{
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+}
+
+.miniGallery .mgRow img{
+    height: 40vh;
+    width: max-content;
+    margin: 1vh;
+    object-fit: cover;
+    padding: .5vh;
+}
+
+/*
+Lightbox
+*/
+
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border: 1vh solid #f1f1f1;
+    transition: transform 0.2s ease-in-out;
+}
+

@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Homboi Photography</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="preload" href="../style/fonts/Lato/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="../style/jstyle.js"></script>
-    <link rel="stylesheet" href="../style/mystyle.css">
+    <script src="../style/javascript/navJS.js"></script>
+    <script src="../style/javascript/lightbox.js"></script>
+    <link rel="stylesheet" href="../style/css/mystyle.css">
 </head>
 <body>
 
@@ -91,6 +93,31 @@
     <h1 style="text-transform: uppercase; font-weight: 200">
         Hi, Welcome to Homboi Photography
     </h1>
+    <h4 style="text-transform: uppercase; font-weight: 100">First impressions matter. Take a look and decide for yourself.</h4>
+</div>
+
+<div class="miniGallery">
+    <div class="mgRow">
+        <div><img class="clickable-img col-sm-4 img-thumbnail" src="../images/sample7.jpg" alt="image"></div>
+        <div><img class="clickable-img col-sm-4 img-thumbnail" src="../images/sample8.jpg" alt="image"></div>
+        <div><img class="clickable-img col-sm-4 img-thumbnail" src="../images/sample9.jpg" alt="image"></div>
+    </div>
+
+    <div class="mgRow">
+        <div><img class="clickable-img col-sm-4 img-thumbnail" src="../images/sample8.jpg" alt="image"></div>
+        <div><img class="clickable-img col-sm-4 img-thumbnail" src="../images/sample9.jpg" alt="image"></div>
+        <div><img class="clickable-img col-sm-4 img-thumbnail" src="../images/sample10.jpg" alt="image"></div>
+    </div>
+
+    <div class="mgRow">
+        <div><img class="clickable-img col-sm-4 img-thumbnail" src="../images/sample10.jpg" alt="image"></div>
+        <div><img class="clickable-img col-sm-4 img-thumbnail" src="../images/sample7.jpg" alt="image"></div>
+        <div><img class="clickable-img col-sm-4 img-thumbnail" src="../images/sample8.jpg" alt="image"></div>
+    </div>
+</div>
+
+<div id="lightbox" class="lightbox">
+    <img id="lightbox-img" src="" alt="lightbox">
 </div>
 
 </body>
