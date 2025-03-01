@@ -1,0 +1,176 @@
+body{
+    background-color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: "Trebuchet MS", "sans-serif";
+    margin: 0;
+    padding: 0;
+}
+.testScroll{
+    height: 5000px;
+}
+
+p{
+    background: none;
+}
+
+.logo{
+    background: none;
+}
+
+.palette{
+    background-color: #223148;
+    color: #f3eae0;
+}
+
+.navbar{
+    background-color: #223148;
+    border-radius: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.sticky-nav .navbar-brand{
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.navbar .custom-nav{
+    background-color: #223148;
+    z-index: 9999;
+    border: 0;
+    font-size: 1.75vh !important;
+    letter-spacing: .1vw;
+    border-radius: 0;
+    margin-left: 2vh;
+    align-items: center;
+    height: 5vh;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+.navbar-nav li a{
+    color: #f3eae0;
+}
+
+.navbar-brand{
+    color: #f3eae0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.navbar-header .navbar-brand:hover{
+    color: #f3eae0;
+}
+
+.navbar-header .navbar-brand:hover{
+    color: #b9d3fa;
+}
+
+.navbar-nav li a:hover,
+.navbar-nav li.active a,
+.navbar-nav li a:focus{
+    color: #b9d3fa !important;
+    background-color: #223148 !important;
+}
+
+.portDrop .dropdown-menu{
+    border: none;
+    color: #b9d3fa !important;
+    background-color: #223148 !important;
+    min-width: fit-content;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.portDrop .dropdown-menu a:hover{
+    background-color: #223148 !important;
+}
+
+.portDrop .dropdown-toggle {
+    background-color: #223148 !important;
+    color: #f3eae0 !important;
+    border: none !important;
+}
+
+.portDrop .dropdown-toggle:hover,
+.portDrop .dropdown-toggle:focus,
+.portDrop .dropdown-toggle:active{
+    background-color: #223148 !important;
+    color: #b9d3fa !important;
+}
+
+.homeHeader {
+    margin-top: 0;
+    text-align: center;
+    align-items: center;
+    height: 20vh;
+    width: 100%;
+
+}
+
+.jumbotron {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 65vh;
+}
+
+.carousel-inner .item {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.carousel-inner .item img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.carousel-control {
+    background: transparent !important;
+}
+
+.glyphicon-chevron-right{
+    visibility: hidden;
+}
+
+.glyphicon-chevron-left{
+    visibility: hidden;
+}
+
+.carousel-indicators{
+    color: #ffa1bd;
+}
+
+.carousel-indicators li {
+    background-color: #ffa1bd;
+}
+
+.carousel-indicators .active {
+    background-color: #bbaad6;
+}
+
+.carousel{
+    margin-top: 0;
+    border-top: .25vh solid #ffa1bd;
+    border-bottom: .25vh solid #ffa1bd;
+    background-color: #bbaad6;
+}
