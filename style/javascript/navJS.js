@@ -8,7 +8,7 @@ $(document).ready(function () {
         if ($(window).scrollTop() >= jumbotronHeight) {
             navbar.addClass("sticky-nav");
             brand.addClass("visible-brand");
-            $("body").css("padding-top", navbarHeight + "px"); // Prevent snapping
+            $("body").css("padding-top", navbarHeight + "px");
         } else {
             navbar.removeClass("sticky-nav");
             brand.removeClass("visible-brand");
