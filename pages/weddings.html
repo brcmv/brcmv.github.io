@@ -6,9 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="preload" href="../style/fonts/Lato/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="../style/javascript/navJS.js"></script>
+    <script src="../style/javascript/lightbox.js"></script>
     <link rel="stylesheet" href="../style/css/mystyle.css">
 </head>
 <body>
@@ -25,15 +27,12 @@
             <a class="navbar-brand" href="home.html">HOMBOI PHOTOGRAPHY</a>
         </div>
 
-        <div  class="nav navbar-nav navbar-right" style="text-transform: uppercase">
+        <div class="nav navbar-nav navbar-right" style="text-transform: uppercase">
             <ul class="nav navbar-nav">
                 <li><a href="home.html">Home</a></li>
 
                 <li class="portDrop">
-                    <a href="portfolio.html" class="dropdown-toggle" data-toggle="dropdown">
-                        Portfolio
-                        <span class="caret"></span>
-                    </a>
+                    <a href="portfolio.html">Portfolio <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="documentary.html">Documentary</a></li>
                         <li><a href="phonePhotography.html">Phone Photography</a></li>
@@ -50,5 +49,45 @@
 
     </div>
 </nav>
+
+<div class="container-fluid prtChCont">
+    <div class="col-sm-4 chImgCol">
+        <img class="clickable-img" src="../images/sample.jpg">
+        <img class="clickable-img" src="../images/sample2.jpg">
+        <img class="clickable-img" src="../images/sample7.jpg">
+    </div>
+    <div class="col-sm-4 chImgCol">
+        <img class="clickable-img" src="../images/sample3.jpg">
+        <img class="clickable-img" src="../images/sample4.jpg">
+        <img class="clickable-img" src="../images/sample2.jpg">
+    </div>
+    <div class="col-sm-4 chImgCol">
+        <img class="clickable-img" src="../images/sample2.jpg">
+        <img class="clickable-img" src="../images/sample6.jpg">
+        <img class="clickable-img" src="../images/sample9.jpg">
+    </div>
+</div>
+
+<div class="container-fluid msgCont" style="margin-top: 5vh">
+    <h2 style="font-weight: 100; text-transform: uppercase; margin-bottom: 3vh">More Collections:</h2>
+    <ul class="pagination">
+        <li style="font-weight: 200; text-transform: uppercase"><a href="portfolio.html">Portfolio</a></li>
+        <li style="font-weight: 200; text-transform: uppercase"><a href="documentary.html">Documentary</a></li>
+        <li style="font-weight: 200; text-transform: uppercase"><a href="phonePhotography.html">Phone Photography</a></li>
+        <li style="font-weight: 200; text-transform: uppercase"><a href="portraits.html">Portraits</a></li>
+
+    </ul>
+</div>
+
+<div id="lightbox" class="lightbox">
+    <img id="lightbox-img" src="" alt="lightbox">
+</div>
+
 </body>
+
+<footer class="footerCnt">
+    <div class="container-fluid msgCont">
+        <h4 style="font-weight: 200">I will end it all :)</h4>
+    </div>
+</footer>
 </html>

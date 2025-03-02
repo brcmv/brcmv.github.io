@@ -177,33 +177,43 @@ Navbar
 Drop down in nav
 */
 
-.portDrop .dropdown-menu{
-    border: none;
-    color: #ffffff !important;
-    background-color: #171719 !important;
-    min-width: fit-content;
-    text-align: center;
+.portDrop {
+    position: relative;
+}
+
+.portDrop .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
+    background-color: #171719 !important;
+    color: #ffffff !important;
+    min-width: fit-content;
+    text-align: center;
+    border: none;
 }
 
-.portDrop .dropdown-menu a:hover{
+.portDrop:hover .dropdown-menu {
+    display: block;
+}
+
+.portDrop .dropdown-menu a:hover {
     background-color: #171719 !important;
 }
 
-.portDrop .dropdown-toggle {
+.portDrop a {
     background-color: #171719 !important;
     color: #f1f1f1 !important;
     border: none !important;
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
 }
 
-.portDrop .dropdown-toggle:hover,
-.portDrop .dropdown-toggle:focus,
-.portDrop .dropdown-toggle:active{
-    background-color: #171719 !important;
+.portDrop:hover > a {
     color: #ffffff !important;
 }
-
 /*
 Jumbotron
 */
@@ -307,8 +317,10 @@ Containers
 }
 
 .msgCont .pagination,
-.msgCont .pagination a{
-    font-size: 4vh;
+.msgCont .pagination a,
+.pagination,
+.pagination a{
+    font-size: 2.5vh;
     color: #f1f1f1 !important;
     background-color: #171719 !important;
     border: none;
@@ -349,6 +361,14 @@ Containers
     overflow: hidden;
 }
 
+.prtChCont{
+    display: flex;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
 /*
 Image divs
  */
@@ -359,22 +379,25 @@ Image divs
 }
 
 .miniGallery{
-    align-items: center;
-    justify-content: center;
-    align-content: center;
+    display: flex;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 .miniGallery .mgRow{
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    display: flex;
+    height: fit-content;
+    width: 100%;
+    margin: 0;
+    object-fit: cover;
+    padding: 0;
 }
 
 .miniGallery .mgRow img{
-    height: 40vh;
-    width: max-content;
-    margin: 1vh;
+    height: fit-content;
+    width: 100%;
+    margin: 0;
     object-fit: cover;
     padding: .5vh;
 }
@@ -389,6 +412,22 @@ Image divs
     align-items: center;
     align-content: center;
     justify-content: center;
+}
+
+.prtChCont img{
+    height: fit-content;
+    width: 100%;
+    margin: 0;
+    object-fit: cover;
+    padding: .5vh;
+}
+
+.prtChCont .chImgCol{
+    height: fit-content;
+    width: 100%;
+    margin: 0;
+    object-fit: cover;
+    padding: 0;
 }
 
 /*
