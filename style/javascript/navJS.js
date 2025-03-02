@@ -1,7 +1,7 @@
 $(document).ready(function () {
     var navbar = $(".navbar");
     var brand = $(".navbar-brand");
-    var jumbotronHeight = $(".homeHeader").outerHeight();
+    var jumbotronHeight = $(".homeHeader").offset().top + $(".homeHeader").outerHeight();
     var navbarHeight = navbar.outerHeight();
 
     $(window).scroll(function () {

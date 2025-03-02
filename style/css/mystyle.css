@@ -369,6 +369,52 @@ Containers
     overflow: hidden;
 }
 
+.pkgCont{
+    display: flex;
+    margin: 0;
+    border: 0;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-bottom: 5vh;
+    overflow: hidden;
+    color: #f1f1f1;
+}
+
+.pkgCont .pkgRates .rateSpacer{
+    height: 5vh;
+}
+
+.pkgRates {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 5vw;
+    text-transform: uppercase;
+    border: .15vh solid;
+}
+
+.ratesWrapper {
+    flex-grow: 1;
+}
+
+.pkgRates p {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 2vh;
+}
+
+.price {
+    text-align: right;
+}
+
+.total {
+    margin-top: auto;
+    bottom: 20%;
+    font-weight: bold;
+}
+
 /*
 Image divs
  */
@@ -428,6 +474,18 @@ Image divs
     margin: 0;
     object-fit: cover;
     padding: 0;
+}
+
+.pkgCont img{
+    height: 60vh;
+    max-width: 100%;
+    background-color: #171719;
+    margin: 0;
+    padding: 0;
+    object-fit: fill;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
 }
 
 /*
