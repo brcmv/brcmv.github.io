@@ -74,7 +74,11 @@ p{
 .palette{
     background-color: #171719;
     color: #f1f1f1;
+    font-family: Lato, sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
 }
+
 .row.no-gutters {
     margin-right: 0;
     margin-left: 0;
@@ -97,6 +101,15 @@ p{
     transition: opacity 0.3s ease-in-out;
 }
 
+.form-group label,
+.form-group input,
+.form-group select,
+.form-group select option,
+.form-group textarea{
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
 /*
 Navbar
 */
@@ -106,6 +119,7 @@ Navbar
     border-radius: 0;
     margin-top: 0;
     margin-bottom: 0;
+    border-bottom: .1vh solid #f1f1f1;
     transition: all 0.3s ease-in-out;
 }
 
@@ -375,7 +389,6 @@ Containers
     border: 0;
     padding-left: 10vw;
     padding-right: 10vw;
-    padding-bottom: 5vh;
     overflow: hidden;
     color: #f1f1f1;
 }
@@ -391,7 +404,6 @@ Containers
     width: 100%;
     padding-left: 5vw;
     text-transform: uppercase;
-    border: .15vh solid;
 }
 
 .ratesWrapper {
@@ -411,6 +423,7 @@ Containers
 
 .total {
     margin-top: auto;
+    padding-top: .4vh;
     bottom: 20%;
     font-weight: bold;
 }
