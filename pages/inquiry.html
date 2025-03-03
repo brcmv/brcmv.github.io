@@ -8,15 +8,58 @@
     <link rel="preload" href="../style/fonts/Lato/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="../style/javascript/validator.js"></script>
     <script src="../style/javascript/navJS.js"></script>
+    <script src="../style/javascript/dataSend.js"></script>
     <link rel="stylesheet" href="../style/css/mystyle.css">
+    <script>
+        $(document).ready(function() {
+            $('#inquiry-type').change(function() {
+                var selectedType = $(this).val();
+                if (selectedType === "general") {
+                    $('#general-inquiry-fields').show();
+                    $('#booking-fields').hide();
+                } else if (selectedType === "booking") {
+                    $('#general-inquiry-fields').hide();
+                    $('#booking-fields').show();
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let dateInput = document.getElementById('appointment-date');
+            let today = new Date();
+
+            let year = today.getFullYear();
+            let month = String(today.getMonth() + 1).padStart(2, '0');
+            let day = String(today.getDate()).padStart(2, '0');
+
+            let formattedDate = `${year}-${month}-${day}`;
+            dateInput.setAttribute('min', formattedDate);
+
+            dateInput.addEventListener('input', function () {
+                if (this.value < this.min) {
+                    this.value = this.min;
+                }
+            });
+        });
+    </script>
 </head>
 <body>
+
+<div class="homeHeader jumbotron palette">
+    <h1 style="text-transform: uppercase; font-weight: 200">About Us</h1>
+    <h4 style="text-transform: uppercase; font-weight: 100; color: white">Meet the team</h4>
+</div>
+
 <nav class="navbar custom-nav">
     <div class="container-fluid">
+
         <div class="navbar-header">
             <a class="navbar-brand" href="../index.html">HOMBOI PHOTOGRAPHY</a>
         </div>
+
         <div class="nav navbar-nav navbar-right" style="text-transform: uppercase">
             <ul class="nav navbar-nav">
                 <li><a href="../index.html">Home</a></li>
@@ -34,68 +77,108 @@
                 <li><a href="aboutUs.html">About Us</a></li>
             </ul>
         </div>
+
     </div>
 </nav>
 
-<div class="container-fluid palette">
-    <h2 style="text-transform: uppercase; font-weight: 100">Inquiry Form</h2> <!-- added form for inquiring customers -->
+<div class="container-fluid palette formCont">
     <div class="row">
-        <div class="col-md-4"> <!-- left side for photo -->
-            <img src="JAVAN PIC HERE PLZ.jpg" class="img-responsive" alt="Photo Placeholder"> <!-- plz replace with javan's picture :-D -->
+
+        <div class="col-sm-6 imgCont">
+            <img src="../images/portrait/1.jpg" class="img-responsive" alt="Photo Placeholder">
         </div>
-        <div class="col-md-8"> <!-- right side for form -->
-            <form>
-                <div class="form-group">
-                    <label for="first-name">First Name:</label> <!-- first name part which requires the user to input first name -->
-                    <input type="text" class="form-control" id="first-name" name="first-name" required>
+
+        <div class="col-sm-6 inpCont">
+            <form id="inquiryForm">
+                <h2 style="text-transform: uppercase; font-weight: 200;">Inquiry Form</h2>
+                <p style="text-transform: uppercase; font-weight: 200; margin-bottom: 5vh">Have a question? Want to set up an appointment? Fill up the form below and we'll get back to you ASAP!</p>
+                <div class="row">
+                    <div class="col-sm-6">
+
+                        <div class="form-group">
+                            <label for="inquiry-type">Select Inquiry Type:</label>
+                            <select class="form-control" id="inquiry-type" required>
+                                <option value="" disabled selected>Choose an option</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="booking">Booking an Appointment</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-6">
+
+                        <div class="form-group">
+                            <label for="source">How did you know about HOMBOI?</label>
+                            <select class="form-control" id="source" name="source">
+                                <option value="" disabled selected>Choose an option</option>
+                                <option>Social Media</option>
+                                <option>Friends/Family</option>
+                                <option>Website</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                    </div>
+
                 </div>
-                <div class="form-group">
-                    <label for="last-name">Last Name:</label> <!-- last name part which requires the user to input last name -->
-                    <input type="text" class="form-control" id="last-name" name="last-name" required>
+
+                <div class="row">
+                    <div class="col-sm-6">
+
+                        <div class="form-group">
+                            <label for="first-name">First Name:</label>
+                            <input type="text" class="form-control" id="first-name" name="first-name" required>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+
+                            <label for="last-name">Last Name:</label>
+                            <input type="text" class="form-control" id="last-name" name="last-name" required>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email:</label> <!-- email part which requires the user to input email -->
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div> 
-                <div class="form-group">
-                    <label for="contact">Contact Number:</label> <!-- contact num part which requires the user to input contact num -->
-                    <input type="tel" class="form-control" id="contact" name="contact" required>
+
+                <div class="row">
+                    <div class="col-sm-6">
+
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input style="text-transform: revert" type="email" class="form-control" id="email" name="email" required>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-6">
+
+                        <div class="form-group">
+                            <label for="contact">Contact Number:</label>
+                            <input type="tel" class="form-control" id="contact" name="contact" required>
+                        </div>
+
+                    </div>
                 </div>
+
                 <div class="form-group">
-                    <label for="package">Package:</label> <!-- drop down where app requires user to choose among the 5 packages -->
-                    <select class="form-control" id="package" name="package" required>
-                        <option value="" disabled selected>Choose a package</option>
-                        <option>Event (Package 1)</option>
-                        <option>Family (Package 2)</option>
-                        <option>Portrait (Package 3)</option>
-                        <option>Real Estate (Package 4)</option>
-                        <option>Wedding (Package 5)</option>
-                        <option>Custom Package</option>
-                    </select>
-                </div>
-                <div class="form-group"> <!-- another drop down where app requires user to choose where he knew of homboi -->
-                    <label for="source">How did you know about HOMBOI?</label>
-                    <select class="form-control" id="source" name="source" required>
-                        <option value="" disabled selected>Choose an option</option>
-                        <option>Social Media</option>
-                        <option>Friends/Family</option>
-                        <option>Website</option>
-                        <option>Other</option>
-                    </select>
-                </div>
-                <div class="form-group"> <!-- comment/suggestion box -->
                     <label for="message">Leave a Message:</label>
-                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tell us your comments/recommendations!"></textarea>
+                    <textarea class="form-control" style="width: 40vw; height: 15vh" id="message" name="message" rows="4" placeholder="Tell us your comments/recommendations!"></textarea>
                 </div>
+
                 <div class="form-group text-center">
-                    <button type="submit" class="btn btn-primary" style="text-transform: uppercase;font-weight: 200; background-color: #171719; border:.1vh #f1f1f1 solid">
+                    <button type="submit" class="btn btn-primary" style="width:7vw; height: 5vh ;text-transform: uppercase;font-weight: 200; background-color: #171719; border:.1vh #f1f1f1 solid; margin-top: 3vh">
                         Submit
                     </button>
                 </div>
-            </form>
-        </div>
-    </div>
-</div>
 
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
 </body>
 </html>
