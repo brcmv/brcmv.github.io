@@ -1,16 +1,23 @@
-document.getElementById("inquiryForm").addEventListener("submit", async function(event) {
-    event.preventDefault();
+document.querySelector("form").addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    const formData = new FormData(this);
-    const jsonData = {};
-    formData.forEach((value, key) => jsonData[key] = value);
+    const formData = {
+        name: document.getElementById("first-name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+    };
 
-    const response = await fetch("/api/sendEmail", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(jsonData)
-});
+    const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+    });
 
-    const result = await response.json();
-    alert(result.success || result.error);
+    if (response.ok) {
+        alert("Email sent successfully!");
+    } else {
+        alert("Failed to send email.");
+    }
 });
