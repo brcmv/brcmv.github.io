@@ -38,55 +38,63 @@
 </nav>
 
 <div class="container-fluid palette">
-    <h2 style="text-transform: uppercase; font-weight: 100">Inquiry Form</h2> <!-- added form for inquiring costumers -->
-    <form>
-        <div class="form-group">
-            <label for="first-name">First Name:</label> <!-- first name part which requires the user to input first name -->
-            <input type="text" class="form-control" id="first-name" name="first-name" required>
+    <h2 style="text-transform: uppercase; font-weight: 100">Inquiry Form</h2> <!-- added form for inquiring customers -->
+    <div class="row">
+        <div class="col-md-4"> <!-- left side for photo -->
+            <img src="JAVAN PIC HERE PLZ.jpg" class="img-responsive" alt="Photo Placeholder"> <!-- plz replace with javan's picture :-D -->
         </div>
-        <div class="form-group">
-            <label for="last-name">Last Name:</label> <!-- last name part which requires the user to input last name -->
-            <input type="text" class="form-control" id="last-name" name="last-name" required>
+        <div class="col-md-8"> <!-- right side for form -->
+            <form>
+                <div class="form-group">
+                    <label for="first-name">First Name:</label> <!-- first name part which requires the user to input first name -->
+                    <input type="text" class="form-control" id="first-name" name="first-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name:</label> <!-- last name part which requires the user to input last name -->
+                    <input type="text" class="form-control" id="last-name" name="last-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label> <!-- email part which requires the user to input email -->
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div> 
+                <div class="form-group">
+                    <label for="contact">Contact Number:</label> <!-- contact num part which requires the user to input contact num -->
+                    <input type="tel" class="form-control" id="contact" name="contact" required>
+                </div>
+                <div class="form-group">
+                    <label for="package">Package:</label> <!-- drop down where app requires user to choose among the 5 packages -->
+                    <select class="form-control" id="package" name="package" required>
+                        <option value="" disabled selected>Choose a package</option>
+                        <option>Event (Package 1)</option>
+                        <option>Family (Package 2)</option>
+                        <option>Portrait (Package 3)</option>
+                        <option>Real Estate (Package 4)</option>
+                        <option>Wedding (Package 5)</option>
+                        <option>Custom Package</option>
+                    </select>
+                </div>
+                <div class="form-group"> <!-- another drop down where app requires user to choose where he knew of homboi -->
+                    <label for="source">How did you know about HOMBOI?</label>
+                    <select class="form-control" id="source" name="source" required>
+                        <option value="" disabled selected>Choose an option</option>
+                        <option>Social Media</option>
+                        <option>Friends/Family</option>
+                        <option>Website</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group"> <!-- comment/suggestion box -->
+                    <label for="message">Leave a Message:</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tell us your comments/recommendations!"></textarea>
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary" style="text-transform: uppercase;font-weight: 200; background-color: #171719; border:.1vh #f1f1f1 solid">
+                        Submit
+                    </button>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="email">Email:</label> <!-- email part which requires the user to input email -->
-            <input type="email" class="form-control" id="email" name="email" required>
-        </div> 
-        <div class="form-group">
-            <label for="contact">Contact Number:</label> <!-- contact num part which requires the user to input contact num -->
-            <input type="tel" class="form-control" id="contact" name="contact" required>
-        </div>
-        <div class="form-group">
-            <label for="package">Package:</label> <!-- drop down where app requires user to choose among the 5 packages -->
-            <select class="form-control" id="package" name="package">
-				<option value="" disabled selected>Choose a package</option>
-                <option>Event (Package 1)</option>
-                <option>Family (Package 2)</option>
-                <option>Portrait (Package 3)</option>
-				<option>Real Estate (Package 4)</option>
-				<option>Wedding (Package 5)</option>
-            </select>
-        </div>
-        <div class="form-group"> <!-- another drop down where app requires user to choose where he knew of homboi -->
-            <label for="source">How did you know about HOMBOI?</label>
-            <select class="form-control" id="source" name="source">
-				<option value="" disabled selected>Choose an option</option>
-                <option>Social Media</option>
-                <option>Friends/Family</option>
-                <option>Website</option>
-                <option>Other</option>
-            </select>
-        </div>
-        <div class="form-group"> <!-- comment/suggestion box -->
-            <label for="message">Leave a Message:</label>
-            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tell us your comments/recommendations!"></textarea>
-        </div>
-		<div class="form-group text-center">
-        <button type="submit" class="btn btn-primary" style="text-transform: uppercase;font-weight: 200; background-color: #171719; border:.1vh #f1f1f1 solid">
-            Submit
-        </button>
-		</div>
-    </form>
+    </div>
 </div>
 
 </body>
