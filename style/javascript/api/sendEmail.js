@@ -17,7 +17,7 @@ export default async function handler(req, res) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            from: "yourname@yourdomain.com",
+            from: "https://homboiphotography.vercel.app",
             to: "bobevallejos478@gmail.com",
             subject: `New Inquiry from ${firstName} ${lastName}`,
             text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nContact: ${contact}\nMessage: ${message}`
