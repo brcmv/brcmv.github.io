@@ -13,36 +13,30 @@
     <script src="../style/javascript/navJS.js"></script>
     <link rel="stylesheet" href="../style/css/mystyle.css">
     <script>
-        $(document).ready(function() {
-            $('#inquiry-type').change(function() {
-                var selectedType = $(this).val();
-                if (selectedType === "general") {
-                    $('#general-inquiry-fields').show();
-                    $('#booking-fields').hide();
-                } else if (selectedType === "booking") {
-                    $('#general-inquiry-fields').hide();
-                    $('#booking-fields').show();
+        document.addEventListener('DOMContentLoaded', function () {
+            let inquiryType = document.getElementById('inquiry-type');
+            let dateInput = document.getElementById('date');
+            let dateField = dateInput.closest('.form-group');
+
+            let today = new Date().toISOString().split('T')[0];
+            dateInput.setAttribute('min', today);
+
+            inquiryType.addEventListener('change', function () {
+                if (this.value === 'booking') {
+                    dateField.style.display = 'block';
+                } else {
+                    dateField.style.display = 'none';
+                    dateInput.value = ''; // Reset value when hidden
                 }
             });
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            let dateInput = document.getElementById('appointment-date');
-            let today = new Date();
-
-            let year = today.getFullYear();
-            let month = String(today.getMonth() + 1).padStart(2, '0');
-            let day = String(today.getDate()).padStart(2, '0');
-
-            let formattedDate = `${year}-${month}-${day}`;
-            dateInput.setAttribute('min', formattedDate);
 
             dateInput.addEventListener('input', function () {
-                if (this.value < this.min) {
-                    this.value = this.min;
+                if (this.value < today) {
+                    this.value = today;
                 }
             });
+
+            dateField.style.display = 'none'; // Hide initially
         });
     </script>
 </head>
@@ -163,6 +157,11 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="message">Input Date:</label>
+                    <input type="date" class="form-control" style="color:#f1f1f1; width: 40vw; height: 4vh" id="date" name="message" placeholder="MM/DD/YY">
+                </div>
+
+                <div class="form-group">
                     <label for="message">Leave a Message:</label>
                     <textarea class="form-control" style="width: 40vw; height: 15vh" id="message" name="message" rows="4" placeholder="Tell us your comments/recommendations!"></textarea>
                 </div>
@@ -180,6 +179,8 @@
     </div>
 
 </div>
+
+
 </body>
 <footer class="footerCnt palette">
     <div class="container-fluid msgCont" style="height: 25vh">
